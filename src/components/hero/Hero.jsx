@@ -1,30 +1,84 @@
-import "./hero.css"
+import { Canvas } from "@react-three/fiber";
+import "./hero.css";
 import Speech from "./Speech";
+import { motion } from "motion/react";
+import Shape from "./Shape";
+import { Suspense } from "react";
+
+
+const awardVariants={
+  initial:{
+    x: -100,
+    opacity: 0,
+  },
+  animate:{
+    x: 0,
+    opacity: 1,
+    transition:{
+      duration: 1,
+      staggerChildren: 0.2,
+    }
+  }
+}
+
+const followVariants = {
+  initial: {
+    y: -100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
 
 const Hero = () => {
   return (
     <div className="hero">
       <div className="hSection left">
         {/* TITLE */}
-        <h1 className="hTitle">
+        <motion.h1
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 2.5 }}
+          className="hTitle"
+        >
           Hey There,
           <br />
           <span>I'm Karan!</span>
-        </h1>
+        </motion.h1>
         {/* AWARDS */}
-        <div className="awards">
-          <h2>Developer & Data Scientist</h2>
-          <p>
+        <motion.div 
+        variants={awardVariants}
+        initial='initial'
+        animate='animate'
+        className="awards">
+          <motion.h2 variants={awardVariants}>Developer & Data Scientist</motion.h2>
+          <motion.p variants={awardVariants}>
             Crafting responsive Desings in Full-Stack Tech and scalable APIs backed by PostgreSQL, while architecting data pipelines and ML-driven dashboards. By uniting UX and analytics as I deliver robust, data-informed solutions that drive strategic decision-making.
-          </p>
-          <div className="awardList">
-            <img src="/award1.png" alt="" />
-            <img src="/award2.png" alt="" />
-            <img src="/award3.png" alt="" />
-          </div>
-        </div>
+          </motion.p>
+          <motion.div variants={awardVariants} className="awardList">
+            <motion.img variants={awardVariants} src="/award1.png" alt="" />
+            <motion.img variants={awardVariants} src="/award2.png" alt="" />
+            <motion.img variants={awardVariants} src="/award3.png" alt="" />
+          </motion.div>
+        </motion.div>
         {/* SCROLL SVG */}
-        <a href="#services">
+        <motion.a
+          animate={{ y: [0, 5], opacity: [0, 1, 0] }}
+          transition={{
+            repeat: Infinity,
+            duration: 4,
+            ease: "easeInOut",
+          }}
+          href="#services"
+          className="scroll"
+        >
           <svg
             width="50px"
             height="50px"
@@ -37,39 +91,79 @@ const Hero = () => {
               stroke="white"
               strokeWidth="1"
             />
+            <motion.path
+              animate={{ y: [0, 5] }}
+              transition={{
+                repeat: Infinity,
+                duration: 4,
+                ease: "easeInOut",
+              }}
+              d="M12 5V8"
+              stroke="white"
+              strokeWidth="1"
+              strokeLinecap="round"
+            />
           </svg>
-        </a>
+        </motion.a>
       </div>
       <div className="hSection right">
         {/* FOLLOW */}
-        <div className="follow">
-          <a href="https://www.instagram.com/karan_r_joshi/">
+        <motion.div
+          variants={followVariants}
+          initial="initial"
+          animate="animate"
+          className="follow"
+        >
+          <motion.a variants={followVariants} href="https://www.instagram.com/karan_r_joshi/">
             <img src="/instagram.png" alt="" />
-          </a>
-          <a href="https://www.facebook.com/share/1HJX3CBe9d/">
+          </motion.a>
+          <motion.a variants={followVariants} href="https://www.facebook.com/share/1HJX3CBe9d/">
             <img src="/facebook.png" alt="" />
-          </a>
-          <a href="https://www.youtube.com/">
+          </motion.a>
+          <motion.a variants={followVariants} href="https://www.youtube.com/">
             <img src="/youtube.png" alt="" />
-          </a>
-          <a href="https://www.github.com/karan2003">
+          </motion.a>
+          <motion.a variants={followVariants} href="https://www.github.com/karan2003">
             <img src="/github.png" alt="" />
-          </a>
-          <div className="followTextContainer"></div>
-          <div className="followText">TAP TO CONNECT</div>
-        </div>
+          </motion.a>
+          <motion.a variants={followVariants} href="https://www.linkedin.com/in/karan-r-joshi/">
+            <img src="/linkedin.png" alt="" />
+          </motion.a>
+          <motion.div variants={followVariants} className="followTextContainer">
+            <div className="followText">FOLLOW ME</div>
+          </motion.div>
+        </motion.div>
         {/* BUBBLE */}
         <Speech />
         {/* CERTIFICATE */}
-        <div className="certificate">
+        <motion.div
+        animate={{ opacity: [0,1]}}
+        transition={{ duration:1}}
+        className="certificate">
           <img src="/certificate.png" alt="Certificate" />
           <p>NASSCOM CERTIFIED - CYBER SECURITY ANALYST</p>
           <p>2X - NPTEL GOLD MEDAL</p>
           <p>CELONIS CERTIFIED ANALYST</p>
-        </div>
+        </motion.div>
         {/* CONTACT BUTTON */}
-        <a href="/#contact" className="contactLink">
-          <div className="contactButton">
+        <motion.a href="/#contact" 
+        animate={{ 
+          x:[200, 0],
+          opacity: [0,1],
+        }}
+        transition={{
+          duration:2,
+        }}
+        className="contactLink">
+
+          <motion.div className="contactButton"
+          animate={{rotate:[0, 360]}}
+          transition={{
+            duration:10,
+            repeat:Infinity,
+            ease:"linear",
+          }}
+          >
             <svg viewBox="0 0 200 200" width="150" height="150">
               <circle cx="100" cy="100" r="90" fill="pink" />
               <path
@@ -100,8 +194,20 @@ const Hero = () => {
                 <polyline points="9 6 18 6 18 15" />
               </svg>
             </div>
-          </div>
-        </a>
+          </motion.div>
+        </motion.a>
+      </div>
+      <div className="bg">
+      {/* 3d */}
+      <Canvas>
+          <Suspense fallback="loading...">
+            <Shape />
+          </Suspense>
+        </Canvas>
+
+        <div className="hImg">
+          <img src="/hero1.png" alt="" />
+        </div>
       </div>
     </div>
   );

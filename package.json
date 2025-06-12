@@ -10,8 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "@react-three/postprocessing": "^3.0.4",
+    "@types/three": "^0.177.0",
+    "motion": "^12.17.0",
+    "postprocessing": "^6.37.4",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-type-animation": "^3.2.0",
+    "three": "^0.160.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
