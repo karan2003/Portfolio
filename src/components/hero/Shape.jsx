@@ -20,7 +20,7 @@ const AnimatedSphere = () => {
         <MeshDistortMaterial
           color="#FFB823" // lighter warm tone for better contrast
           distort={0.5}
-          speed={0.001}
+          speed={2}
           roughness={0.1}
           metalness={0.1}
         />
