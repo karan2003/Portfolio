@@ -20,20 +20,20 @@ const AnimatedSphere = () => {
         <MeshDistortMaterial
           color="#FFB823" // lighter warm tone for better contrast
           distort={0.5}
-          speed={2}
+          speed={2.5}
           roughness={0.1}
           metalness={0.1}
         />
       </Sphere>
 
       {/* Sparkling effect around the sphere */}
-      <Sparkles
+       <Sparkles
         count={80}
         scale={[6, 6, 6]}
-        size={3.5}
+        size={0.9}
         speed={0.1}
         position={[0, 0, 0]}
-      />
+      /> 
     </>
   );
 };
@@ -51,8 +51,8 @@ const Shape = () => {
       <OrbitControls enableZoom={false} autoRotate />
 
       {/* Lighting */}
-      <ambientLight intensity={0.2} />
-      <directionalLight position={[3, 5, 1]} intensity={1} castShadow />
+      <ambientLight intensity={0.4} />
+      <directionalLight position={[3, 5, 1]} intensity={2.3} castShadow />
 
       {/* Animated Sphere */}
       <AnimatedSphere />

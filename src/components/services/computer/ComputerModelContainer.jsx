@@ -17,4 +17,4 @@ const ComputerModelContainer = () => {
   );
 };
 
-export default ComputerModelContainer;
+export default ComputerModelContainer; 
