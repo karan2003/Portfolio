@@ -266,17 +266,38 @@
 
     .hSection.right{
         justify-content: end;
-
     }
-
-    .follow,
+    
+    
     .scroll,
     .bubbleContainer,
     .certificate {
     display: none;
   }
   
-
+  .follow {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    gap: 12px;
+    padding: 16px;
+    background-color: #27548A;
+    border-bottom-right-radius: 1000px;
+  }
+  
+  .follow img {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .followTextContainer {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .followText {
+display:none;
+  }
   
 
 

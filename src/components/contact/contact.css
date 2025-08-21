@@ -1,4 +1,325 @@
-.contact{
-
+.contact {
+    height: 100%;
+    display: flex;
+    gap: 100px;
+  }
+  
+  .cSection {
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cSection:last-child {
+    background-color: rgba(2, 2, 45, 0.187);
+    margin: 50px 0px;
+    padding: 50px;
+    border-radius: 50% 0px;
+  }
+  
+  form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(2, 2, 45, 0.066);
+    padding: 50px;
+    border-radius: 50px;
+  }
+  
+  input,
+  textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    outline: none;
+  }
+  
+  input:focus,
+  textarea:focus {
+    box-shadow: 0 0 0 2px rgba(221, 76, 98, 0.3);
+    transform: translateY(-1px);
+  }
+  
+  .formItem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .formButton {
+    background-color: #dd4c62;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .formButton:hover:not(:disabled) {
+    background-color: #c43e56;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(221, 76, 98, 0.4);
+  }
+  
+  .formButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .formButton:active {
+    transform: translateY(0);
+  }
+  
+  /* Toast Notifications Styles */
+  .toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+  }
+  
+  .toast {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+    font-weight: 500;
+    max-width: 380px;
+    word-wrap: break-word;
+    position: relative;
+  }
+  
+  .toast-success {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.9), rgba(5, 150, 105, 0.9));
+    color: white;
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+  
+  .toast-error {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.9), rgba(220, 38, 38, 0.9));
+    color: white;
+    border-color: rgba(239, 68, 68, 0.3);
+  }
+  
+  .toast-warning {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.9), rgba(217, 119, 6, 0.9));
+    color: white;
+    border-color: rgba(245, 158, 11, 0.3);
+  }
+  
+  .toast-info {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(37, 99, 235, 0.9));
+    color: white;
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  
+  .toast-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  
+  .toast-message {
+    flex: 1;
+    line-height: 1.4;
+  }
+  
+  .toast-close {
+    background: none;
+    border: none;
+    color: currentColor;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0;
+    margin-left: 8px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+  
+  .toast-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+  
+  .toast-close:active {
+    transform: scale(0.95);
+  }
+  
+  /* Loading animation for button */
+  .formButton:disabled::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1280px) {
+    form {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .contact {
+      gap: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contact {
+      flex-direction: column;
+    }
+  
+    .cSection {
+      width: 100%;
+    }
+  
+    .cSection:first-child {
+      height: 70%;
+    }
     
-}
+    .cSection:last-child {
+      height: 30%;
+    }
+  
+    .toast-container {
+      top: 10px;
+      right: 10px;
+      left: 10px;
+      max-width: none;
+    }
+  
+    .toast {
+      max-width: none;
+    }
+  
+    form {
+      padding: 30px;
+      border-radius: 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact {
+      gap: 20px;
+    }
+  
+    form {
+      padding: 20px;
+      border-radius: 20px;
+    }
+  
+    .formButton {
+      padding: 16px;
+    }
+  
+    .toast {
+      padding: 14px 16px;
+      font-size: 13px;
+    }
+  
+    .toast-container {
+      gap: 8px;
+    }
+  }
+  
+  /* Accessibility improvements */
+  @media (prefers-reduced-motion: reduce) {
+    .toast {
+      transition: none;
+    }
+    
+    .formButton {
+      transition: none;
+    }
+    
+    input,
+    textarea {
+      transition: none;
+    }
+  }
+  
+  /* Focus indicators for better accessibility */
+  .toast-close:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+  }
+  
+  input:focus,
+  textarea:focus,
+  .formButton:focus {
+    outline: 2px solid #dd4c62;
+    outline-offset: 2px;
+  }
+  
+  /* Dark mode support (optional) */
+  @media (prefers-color-scheme: dark) {
+    label {
+      color: #e5e5e5;
+    }
+  
+    input,
+    textarea {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #e5e5e5;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  
+    .toast {
+      backdrop-filter: blur(12px);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+  
