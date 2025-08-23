@@ -115,7 +115,7 @@ const Hero = () => {
           className="follow"
         >
           <motion.a variants={followVariants} href="https://www.instagram.com/karan_r_joshi/">
-            <img src="/instagram.png" alt="" />
+            <img src="./instagram.png" alt="" />
           </motion.a>
           <motion.a variants={followVariants} href="https://www.facebook.com/share/1HJX3CBe9d/">
             <img src="/facebook.png" alt="" />
