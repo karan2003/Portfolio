@@ -5,6 +5,9 @@
 This project is a visually rich, animated portfolio website built to showcase various projects with smooth, performance-friendly animations. It features horizontal scroll-based navigation on larger screens and adapts to a vertical scroll layout on mobile devices. The portfolio leverages React, Motion for animation, and modern CSS techniques to deliver a polished and accessible user experience.
 
 ***
+Live Link:https://karanrjoshiportfolio.netlify.app/
+
+***
 
 ## Features
 
